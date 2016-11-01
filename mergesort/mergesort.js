@@ -14,7 +14,6 @@ function mergesort(array){
 
 function merge(left, right){
   var n = left.length + right.length;
-  console.log("n: ", n);
   var i = 0;
   var j = 0;
   var final = [];
