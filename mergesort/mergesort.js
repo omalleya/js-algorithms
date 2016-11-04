@@ -7,7 +7,7 @@ function mergesort(array){
   var left = mergesort(array.slice(0,mid));
   var right = mergesort(array.slice(mid,array.length));
   var joined = merge(left, right);
-  console.log(joined);
+
   return joined;
 
 }
@@ -19,21 +19,19 @@ function merge(left, right){
   var final = [];
 
   for(let k = 1; k <= n; k++) {
-    if(j>right.length-1) {
-      final.push(left[i]);
-      i++;
-    }
-    else if(i>left.length) {
-      final.push(right[j]);
-      j++;
-    }
-    else if(left[i] < right[j]){
-      final.push(left[i]);
-      i++;
-    }else {
-      final.push(right[j]);
-      j++;
-    }
+
+    if(j>right.length-1)
+      final.push(left[i++]);
+
+    else if(i>left.length)
+      final.push(right[j++]);
+
+    else if(left[i] < right[j])
+      final.push(left[i++]);
+
+    else
+      final.push(right[j++]);
+
   }
 
   return final;
